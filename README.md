@@ -1,10 +1,17 @@
-# Python Flask app on Azure App Service Web
+---
+services: app-service\web,app-service
+platforms: python
+author: cephalin
+---
 
-This is a minimal sample app that demonstrates how to run a Python Flask application on Azure App Service Web.
+# Flask and PostgreSQL sample for Azure App Service
 
-This repository can directly be deployed to Azure App Service.
+This is a sample application that you can use to follow along with the tutorial at 
+[Build a Python and PostgreSQL web app in Azure](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-python-postgresql). 
 
-For more information, please see the [Python on App Service Quickstart docs](https://docs.microsoft.com/en-us/azure/app-service-web/app-service-web-get-started-python).
+The sample is a simple Python Flask application that connects to a PostgreSQL database via SQLAlchemy.
+
+The database connection information is specified via environment variables `DBHOST`, `DBPASS`, `DBUSER`, and `DBNAME`. This app always uses the default PostgreSQL port.
 
 # Contributing
 

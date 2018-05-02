@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Guest Registration{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1>User Registration</h1>
+
+    <form action="/register" method="POST">
+        <fieldset>
+
+        <!-- Form Name -->
+        <legend>Register Yourself</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="fname">Name</label>
+          <div class="col-md-4">
+          <input id="fname" name="name" type="text" placeholder="John" class="form-control input-md" required="">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="email">Email</label>
+          <div class="col-md-4">
+          <input id="email" name="email" type="text" placeholder="johndoe@example.com" class="form-control input-md" required="">
+
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="password">Password</label>
+          <div class="col-md-4">
+            <input id="password" name="password" type="password" placeholder="" class="form-control input-md" required="">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="fname">Address</label>
+          <div class="col-md-4">
+          <input id="fname" name="address" type="text" placeholder="Str. Vasile Lupu" class="form-control input-md" required="">
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="fname">Favorite Animal</label>
+          <div class="col-md-4">
+          <input id="fname" name="fv_animal" type="text" placeholder="Dog" class="form-control input-md" required="">
+          </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="save"></label>
+          <div class="col-md-8">
+            <button id="save" name="save" class="btn btn-success">Register</button>
+          </div>
+        </div>
+
+        </fieldset>
+    </form>
+{% endblock %}

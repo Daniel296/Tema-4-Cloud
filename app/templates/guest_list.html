@@ -10,13 +10,19 @@
   <tr>
     <th>Name</th>
     <th>Email</th>
+      <th>Password</th>
+    <th>Address</th>
+      <th>Favorite Animal</th>
   </tr>
   </thead>
   <tbody>
-  {% for guest in guests %}
+  {% for user in users %}
     <tr>
-    <td>{{ guest.name }}</td>
-    <td>{{ guest.email }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td> ****** </td>
+    <td>{{ user.address }}</td>
+    <td>{{ user.fv_animal }}</td>
     </tr>
   {% endfor %}
 </table>

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}User Registration Confirmed{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1>You are confirmed!</h1>
+  <p>
+    Name: {{ name }}<br/>
+    Email: {{ email }} <br/>
+      Password: ****** <br/>
+    Address: {{ address }} <br/>
+    Favorite Animal: {{ fv_animal }} <br/>
+  </p>
+  <a href="/">View all users</a>
+{% endblock %}

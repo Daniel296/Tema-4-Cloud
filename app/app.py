@@ -9,7 +9,7 @@ APP.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 APP.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://%s:%s@%s/%s' % (
     # ARGS.dbuser, ARGS.dbpass, ARGS.dbhost, ARGS.dbname
-    os.environ['DBUSER'], os.environ['DBPASS'], os.environ['DBHOST'], os.environ['DBNAME']
+    "Daniel@tema4cloud", "admin123!", "tema4cloud.postgres.database.azure.com", "users"
 )
 
 # initialize the database connection
@@ -23,8 +23,8 @@ from models import *
 
 @APP.route('/')
 def view_registered_guests():
-    guests = Guest.query.all()
-    return render_template('guest_list.html', guests=guests)
+    users = Users.query.all()
+    return render_template('guest_list.html', users=users)
 
 
 @APP.route('/register', methods = ['GET'])
@@ -36,12 +36,15 @@ def view_registration_form():
 def register_guest():
     name = request.form.get('name')
     email = request.form.get('email')
+    password = request.form.get('password')
+    address = request.form.get('address')
+    fv_animal = request.form.get('fv_animal')
 
-    guest = Guest(name, email)
-    DB.session.add(guest)
+    user = Users(name, email, password, address, fv_animal)
+    DB.session.add(user)
     DB.session.commit()
 
     return render_template('guest_confirmation.html',
-        name=name, email=email)
+        name=name, email=email, password=password, address=address, fv_animal=fv_animal)
     
 
